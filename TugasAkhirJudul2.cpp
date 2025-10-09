@@ -1,40 +1,33 @@
 #include <iostream>
 using namespace std;
 
-void tukar (int *x, int *y);
-
-int main () {
+int main() {
     int n;
-    int harga[1005];
-    string menu[1005];
-
-    cout << "Masukkan jumlah menu: ";
+    cout << "Masukkan jumlah botol: ";
     cin >> n;
 
-    cout << "Masukkan nama menu dan harganya (contoh: NasiGoreng 12000)\n";
+    int tinggi[n];
+    cout << "Masukkan tinggi setiap botol (cm):" << endl;
     for (int i = 0; i < n; i++) {
-        cout << "Menu ke-" << i+1 << ": ";
-        cin >> menu[i] >> harga[i];
+        cout << "Botol ke-" << i + 1 << ": ";
+        cin >> tinggi[i];
     }
 
-    for (int i = 0; i < n-1; i++) {
-        for (int j = 0; j < n-i-1; j++) {
-            if (harga[j] > harga[j+1]) {
-                tukar(&harga[j], &harga[j+1]);
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (tinggi[j] > tinggi[j + 1]) {
+                int temp = tinggi[j];
+                tinggi[j] = tinggi[j + 1];
+                tinggi[j + 1] = temp;
             }
         }
     }
 
-    cout << "\nDaftar menu setelah diurutkan dari termurah ke termahal:\n";
+    cout << "\nTinggi botol setelah diurutkan dari terpendek ke tertinggi:" << endl;
     for (int i = 0; i < n; i++) {
-        cout << menu[i] << " - Rp" << harga[i] << endl;
+        cout << tinggi[i] << " ";
     }
+    cout << endl;
 
     return 0;
-}
-
-void tukar (int *x, int *y) {
-    int z = *x;
-    *x = *y;
-    *y = z;
 }
