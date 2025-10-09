@@ -21,7 +21,6 @@ int main () {
         for (int j = 0; j < n-i-1; j++) {
             if (harga[j] > harga[j+1]) {
                 tukar(&harga[j], &harga[j+1]);
-                swap(menu[j], menu[j+1]); 
             }
         }
     }
