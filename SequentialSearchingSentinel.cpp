@@ -17,7 +17,7 @@ int main() {
         i++; 
     } 
  
-    if (i < x) { 
+    if (i < x-1) { 
         flag = 1; 
     } 
  
