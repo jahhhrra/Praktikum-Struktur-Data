@@ -23,11 +23,11 @@ int main() {
             break;  
         } 
         else if (arr[m] < target) { 
-            cout << "Mencari di kiri" << endl; 
+            cout << "Mencari di kanan" << endl; 
             r = m - 1;
         } 
         else { 
-            cout << "Mencari di kanan" << endl; 
+            cout << "Mencari di kiri" << endl; 
             l = m + 1; 
         } 
     } 
